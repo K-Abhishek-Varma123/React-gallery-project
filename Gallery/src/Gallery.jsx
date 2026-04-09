@@ -25,7 +25,7 @@ function Gallery()
                 {store.map((item,index)=>(
                     <div key={index} className="images-container">
                         <img src={item.image} className="images"/>
-                        <p className="images-description">{item.matter}</p>
+                        {/* Any popups for displaying some thing */}
                     </div>
                 ))}
             </div>

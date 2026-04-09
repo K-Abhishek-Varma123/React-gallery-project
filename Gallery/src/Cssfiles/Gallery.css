@@ -1,5 +1,28 @@
 
 .gallery-outer{
     width: 100%;
-    background-color: greenyellow;
+    padding: 20px;
+}
+.gallery-outer .gallery-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    padding: 5px;
+    background-color: pink;
+}
+.gallery-outer .gallery-container .images-container{
+    margin: 10px;
+}
+.gallery-outer .gallery-container .images-container .images{
+    height: 300px;
+    width: 98%;
+    cursor: pointer;
+    border-radius: 40px;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out 0.08s;
+    /* name, duration, timing-function and delay */
+}
+.images:hover
+{
+    transform: scale(1.03);
 }

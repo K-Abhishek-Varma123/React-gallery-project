@@ -4,11 +4,14 @@ import Gallery from './Gallery.jsx';
 import Home from './Home.jsx';
 import NewGallery from './NewGallery.jsx';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function App()
 {
     const navigate = useNavigate();
-    const [active,setActive] = useState("home");
+    const location = useLocation();
+    // const [active,useActive] = useState("home");
+    //issue here when we refresh the page by default we get the color for home .
 
   return(
     <div className="parent-container">
@@ -17,14 +20,15 @@ function App()
           <span  className="ini-name">My Gallery!</span>
           <nav className="navigatores">
             <Link to="/">
-              <button className={active==="home"?"navigate active":"navigate"} onClick={()=>setActive("home")}>Home</button>
+              {/* <button className={active==="home"?"navigate active":"navigate"} onClick={()=>setActive("home")}>Home</button> */}
+              <button className={location.pathname==="/"?"navigate active":"navigate"}>Home</button>
             </Link>
             {/* <button onClick={()=>navigate("/")}>Home</button> */}
             <Link to="/gallery" >
-              <button className={active==="gallery"?"navigate active":"navigate"} onClick={()=>setActive("gallery")}>Gallery</button>
+              <button className={location.pathname==="/gallery"?"navigate active":"navigate"}>Gallery</button>
             </Link>
             <Link to="/newgallery" >
-              <button className={active==="new"?"navigate active":"navigate"} onClick={()=>setActive("new")}>New Gallery</button>
+              <button className={location.pathname==="/newgallery"?"navigate active":"navigate"}>New Gallery</button>
             </Link>
           </nav>
         </div>
