@@ -1,0 +1,66 @@
+.parent-container{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+.head-topper{
+  height: 90px;
+  background-color: rgb(14, 14, 224);
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.head-topper .topper-outer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  height: 80%;
+  width: 90%;
+}
+.head-topper .topper-outer .ini-name{
+  font-weight: bolder;
+  font-size: 25px;
+  color: white;
+  
+}
+.head-topper .topper-outer .navigatores{
+  height: 90%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-topper .topper-outer .navigatores .navigate{
+  height: 90%;
+  padding: 10px;
+  background-color: rgb(13, 192, 247);
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.head-topper .topper-outer .navigatores .navigate.active{
+  background-color: red;
+  color: white;
+}
+.end-footer{
+  color: white;
+  background-color: black;
+  padding: 10px;
+  margin-top: 20px;
+}
+.end-footer .footer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  height: 100%;
+}
+
