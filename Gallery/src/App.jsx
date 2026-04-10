@@ -5,6 +5,7 @@ import Home from './Home.jsx';
 import NewGallery from './NewGallery.jsx';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import homeTree from './assets/homeTree.png';
 
 function App()
 {
@@ -19,6 +20,7 @@ function App()
         <div className="topper-outer">
           <span  className="ini-name">My Gallery!</span>
           <nav className="navigatores">
+            {/* link works as an anchor tag inside any button acts like a navigator but does not take new tab fast and reliable */}
             <Link to="/">
               {/* <button className={active==="home"?"navigate active":"navigate"} onClick={()=>setActive("home")}>Home</button> */}
               <button className={location.pathname==="/"?"navigate active":"navigate"}>Home</button>
@@ -33,9 +35,10 @@ function App()
           </nav>
         </div>
       </header>
-      <main>
+      <main className="middle-main">
           {/* Render the pages */}
-          {/*render the home */}
+          {/*render the home */} 
+          <img src={homeTree} className="main-homeTree"/>
           <Routes>
             <Route path='/' element={<Home/>} ></Route>
             <Route path='/gallery' element={<Gallery/>} ></Route>
