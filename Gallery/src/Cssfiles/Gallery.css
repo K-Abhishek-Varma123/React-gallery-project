@@ -8,7 +8,8 @@
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
     padding: 5px;
-    background-color: pink;
+    background-color:rgb(46, 215, 46);
+    border-radius: 50px;
 }
 .gallery-outer .gallery-container .images-container{
     margin: 10px;

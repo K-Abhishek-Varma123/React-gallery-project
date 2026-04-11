@@ -38,7 +38,7 @@ function App()
       <main className="middle-main">
           {/* Render the pages */}
           {/*render the home */} 
-          <img src={homeTree} className="main-homeTree"/>
+          {/* <img src={homeTree} className="main-homeTree"/> */}
           <Routes>
             <Route path='/' element={<Home/>} ></Route>
             <Route path='/gallery' element={<Gallery/>} ></Route>
