@@ -35,7 +35,7 @@ function Gallery()
                         <img src={item.image} className="images" onClick={()=>showMessage(item)} />
                         {/* <img src={item.image} className="images" onClick={()=>setInfo(item)} />  also valid but to show we can send the parameters in react by using => fun*/}
                         {/* Any popups for displaying some thing */}
-                        {info===item&&(
+                        {info===item&&( 
                             <div className="message-popup" onClick={()=>setInfo(null)}>
                                 <p className="popup-message" onClick={(e)=>e.stopPropagation()}>{info.matter}</p>
                             </div>
