@@ -8,8 +8,8 @@ function NewGallery()
     return(
         <div className="newGallery-outer" >
             <div className="operation-container">
-                <button className="newGallery-add" onClick={()=>setPopup("add")}>Add</button>
-                <button className="newGallery-delete" onClick={()=>setPopup("delete")}>Delete</button>
+                <button className="newGallery" onClick={()=>setPopup("add")}>Add</button>
+                <button className="newGallery" onClick={()=>setPopup("delete")}>Delete</button>
             </div>
             {popup==="add"&&(
                 <div className="add-popup-outer" onClick={()=>setPopup(null)}>
@@ -23,7 +23,13 @@ function NewGallery()
                 </div>
             )};
             {popup==="delete"&&(
-                <div className="delete-popup">delete the item provide the id(number 1,2,3...) of the picture write onclick to iterate and delete it.</div>
+                // <div className="delete-popup">delete the item provide the id(number 1,2,3...) of the picture write onclick to iterate and delete it.</div>
+                <div onClick={()=>setPopup(null)} className="delete-popup">
+                    <div onClick={(e)=>e.stopPropagation()} className="delete-popup-inner">
+                        <h1>provide Id</h1>
+                        <input  />
+                    </div>
+                </div>
             )}
             <div>
                 {/* all the pictures that you are created. */}
