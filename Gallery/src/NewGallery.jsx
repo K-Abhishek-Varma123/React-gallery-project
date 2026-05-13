@@ -26,6 +26,12 @@ function NewGallery()
         const oldData = JSON.parse(localStorage.getItem("products"))||[];
         //unique id.write
 
+        const found = oldData.find(element => {
+            if(element.id===id)
+                return true;
+        });
+        if(found)
+            return alert("ID Already Exist.");
         //now add new data
         const newData = [...oldData,data];
 
@@ -59,6 +65,10 @@ function NewGallery()
         const val = JSON.parse(localStorage.getItem("products"))||[];
         //Try to write automatically rendering images after saving.
         setallData(val);
+        setId("");
+        setUrl("");
+        setDescription("");
+        setdeleteId("");
     },[popup])
     return(
         <div className="newGallery-outer" >
@@ -75,8 +85,6 @@ function NewGallery()
                         <input type="number" placeholder="Image ID" className="image-id" onChange={(e)=>setId(e.target.value)}/>
                         <input type="url" placeholder="Image URL" className="image-url" onChange={(e)=>setUrl(e.target.value)}/>
                         <textarea placeholder="Type Description" className="image-description" rows="4" onChange={(e)=>setDescription(e.target.value)}></textarea>
-
-                        {console.log(id,url,description)}
 
                         <button onClick={handleSave} className="productButton">Save</button>
                         {/* write logic for storing of this two url and description store in one thing and display it one here
